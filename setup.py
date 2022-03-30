@@ -14,6 +14,6 @@ setup(
     author_email="<khaitruong209@gmail.com>",
     description=DESCRIPTION,
     long_description=DESCRIPTION,
-    packages=find_packages(include=["mypackage2092"]),
+    packages=find_packages(include=["mypackage"]),
     install_requires=['flask'],
 )
