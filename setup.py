@@ -3,7 +3,7 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-VERSION = '1.0.1'
+VERSION = '1.0.2'
 DESCRIPTION = 'Test publishing package'
 
 # Setting up
