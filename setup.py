@@ -3,8 +3,8 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-VERSION = '1.0.0'
-DESCRIPTION = 'Test building package'
+VERSION = '1.0.1'
+DESCRIPTION = 'Test publishing package'
 
 # Setting up
 setup(
