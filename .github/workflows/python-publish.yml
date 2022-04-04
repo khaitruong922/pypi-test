@@ -33,7 +33,7 @@ jobs:
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.TEST_PYPI_API_TOKEN}}
-          repository_url: https://test.pypi.org/
+          repository_url: https://test.pypi.org/legacy/
       - name: Install from TestPyPI
         run: |
           pip install --index-url https://test.pypi.org/simple/ mypackage123456
