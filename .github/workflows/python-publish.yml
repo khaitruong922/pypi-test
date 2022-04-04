@@ -30,15 +30,15 @@ jobs:
       - name: Build package
         run: python -m build
       - name: Publish package on TestPyPI
-      - uses: pypa/gh-action-pypi-publish@release/v1
+        uses: pypa/gh-action-pypi-publish@release/v1
         with:
           password: ${{ secrets.TEST_PYPI_API_TOKEN}}
           repository_url: https://test.pypi.org/
       - name: Install from TestPyPI
-      - run: |
+        run: |
           pip install --index-url https://test.pypi.org/simple/ mypackage123456
       - name: Test package
-      - run: |
+        run: |
           rm -r mypackage123456
           pip install pytest pytest-mock
           pytest > pytest_res
