@@ -34,7 +34,7 @@ jobs:
         run: python -m build
       - name: Display environment variables
         run: |
-          echo "${{ env.TEST_PYPI_INSTALL_URL }}""
+          echo "${{ env.TEST_PYPI_INSTALL_URL }}"
           echo "${{ env.TEST_PYPI_PUBLISH_URL }}"
       - name: Publish package on TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
