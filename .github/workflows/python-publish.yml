@@ -14,15 +14,13 @@ on:
       environment:
         description: The environment to publish to
         required: true
-        type: environment
+        type: choice
+        options:
+          - production
 
 jobs:
   publish:
-    name: Publish
-    runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment}}
-
-    steps:
-      - uses: khaitruong922/pypi-publish-reusable-workflow/.github/workflows/publish.yml@master
-        with:
-          package_name: package123456
+    uses: khaitruong922/pypi-publish-reusable-workflow/.github/workflows/publish.yml@master
+    with:
+      package_name: package123456
+      environment: ${{ github.event.inputs.environment}}
