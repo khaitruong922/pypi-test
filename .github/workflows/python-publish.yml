@@ -19,6 +19,7 @@ on:
 jobs:
   publish:
     name: Publish package123456
+    environment: ${{ github.event.inputs.environment }}
     uses: khaitruong922/pypi-publish-reusable-workflow/.github/workflows/publish.yml@master
     with:
       package_name: package123456
