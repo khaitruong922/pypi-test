@@ -44,7 +44,7 @@ jobs:
           repository_url: ${{ secrets.TEST_PYPI_PUBLISH_URL }}
       - name: Install from TestPyPI
         run: |
-          pip install --index-url ${{ secrets.TEST_PYPI_INSTALL_URL }}
+          pip install --index-url ${{ secrets.TEST_PYPI_INSTALL_URL }} mypackage123456
 
       - name: Test package
         run: |
