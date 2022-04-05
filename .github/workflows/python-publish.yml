@@ -19,12 +19,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
+    environment: ${{ github.event.inputs.environment }}
     steps:
-      - run: |
-          echo "Environment: $ENVIRONMENT"
-        env:
-          ENVIRONMENT: ${{ github.event.inputs.environment }}
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v3
@@ -41,16 +37,15 @@ jobs:
         with:
           user: __token__
           password: ${{ secrets.TEST_PYPI_API_TOKEN}}
-          repository_url: https://test.pypi.org/legacy/
+          repository_url: $TEST_PYPI_PUBLISH_URL
       - name: Install from TestPyPI
         run: |
-          pip install --index-url https://test.pypi.org/simple/ mypackage123456
+          pip install --index-url $TEST_PYPI_INSTALL_URL mypackage123456
       - name: Test package
         run: |
           rm -r mypackage123456
           pip install pytest pytest-mock
-          pytest > pytest_res
-          cat pytest_res
+          pytest
 
       - name: Publish package
         uses: pypa/gh-action-pypi-publish@release/v1
