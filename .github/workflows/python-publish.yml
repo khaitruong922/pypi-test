@@ -10,13 +10,6 @@ name: Upload Python Package
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: The environment to publish to
-        required: true
-        type: choice
-        options:
-          - production
 
 jobs:
   publish:
