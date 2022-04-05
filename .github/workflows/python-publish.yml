@@ -15,7 +15,7 @@ jobs:
   publish:
     uses: khaitruong922/pypi-publish-reusable-workflow/.github/workflows/publish.yml@master
     with:
-      package_name: package123456
+      package_name: mypackage123456
     secrets:
       TEST_PYPI_API_TOKEN: ${{ secrets.TEST_PYPI_API_TOKEN}}
       PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN}}
