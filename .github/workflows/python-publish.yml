@@ -9,15 +9,22 @@
 name: Upload Python Package
 
 on:
-  release:
-    types: [published]
   workflow_dispatch:
+    inputs:
+      environment:
+        description: The environment to publish to
+        required: true
+        type: environment
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      - run: |
+          echo "Environment: $ENVIRONMENT"
+        env:
+          ENVIRONMENT: ${{ github.event.inputs.environment }}
       - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v3
