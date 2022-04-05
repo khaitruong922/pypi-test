@@ -3,7 +3,7 @@ import os
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-VERSION = '1.0.8'
+VERSION = '1.0.9'
 DESCRIPTION = 'Test publishing package'
 
 test_requirements = ["pytest>=3.8"]
