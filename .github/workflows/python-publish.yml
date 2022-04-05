@@ -14,7 +14,11 @@ on:
       environment:
         description: The environment to publish to
         required: true
-        type: environment
+        type: choice
+        options:
+          - 'production'
+          - 'staging'
+          - 'development'
 
 jobs:
   publish:
